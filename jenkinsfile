@@ -1,0 +1,17 @@
+node {
+   //def mvnHome
+   stage('checkout') { // for display purposes
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@github.com:yangzhixian/testgit.git']]])
+   }
+   stage('maven Build') {
+    echo 'maven stin'
+
+   }
+   stage('deploy') {
+    echo 'deploy'
+   }
+   stage('test') {
+    echo 'test'
+   }
+   
+}
